@@ -25,6 +25,19 @@ def load_profile():
     return pd.read_csv(PROFILE_PATH)
 
 
+if not os.path.exists(MODEL_PATH):
+    st.warning("Training ML model for the first time... Please wait.")
+
+    import subprocess
+    import sys
+
+    train_script = os.path.join(BASE_DIR, "src", "train_model_final.py")
+
+    subprocess.run(
+        [sys.executable, train_script],
+        check=True
+    )
+
 model = load_model()
 seasonal_profile = load_profile()
 FEATURE_COLS = list(model.feature_names_in_)
