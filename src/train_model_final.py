@@ -28,8 +28,8 @@ def train_model():
 
     print("Training RandomForest model...")
     model = RandomForestRegressor(
-        n_estimators=100,
-        max_depth=15,
+        n_estimators=50,
+        max_depth=12,
         random_state=42,
         n_jobs=-1
     )

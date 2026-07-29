@@ -26,8 +26,9 @@ env/
 # ==============================
 # Machine Learning Models
 # ==============================
-*.pkl
-data/models/
+# Ignore trained ML models
+data/models/*
+!data/models/.gitkeep
 
 # ==============================
 # Generated Reports
